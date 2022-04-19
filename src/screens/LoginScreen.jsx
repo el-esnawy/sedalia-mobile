@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import { useNavigation } from "@react-navigation/native";
-import { userLogin } from "../store/asyncThunk/userThunk";
+import { checkCredentials, userLogin } from "../store/asyncThunk/userThunk";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -14,8 +14,9 @@ const LoginScreen = () => {
   const { token, loading } = useSelector((state) => state.user);
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  console.log(token);
   useEffect(() => {
+    dispatch(checkCredentials());
+
     if (token) {
       navigation.navigate("admin dashboard");
     }

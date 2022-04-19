@@ -8,5 +8,3 @@ export default function OrderRequests() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({});

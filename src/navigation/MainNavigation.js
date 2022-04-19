@@ -29,7 +29,7 @@ const MainNavigator = () => {
               color: Colors.primary,
             },
             headerTintColor: Colors.primaryMain,
-            headerShown: true,
+            headerShown: false,
             headerBackVisible: false,
             headerBackButtonMenuEnabled: false,
           };
